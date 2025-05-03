@@ -2,25 +2,54 @@
 Snažíme sa zaprocovať na novom plugine pre Slovensku Wordpress komunity
 
 
-*Disclaimer: This article and this tool are for technical discussion and sharing only. Illegal use is strictly prohibited.
+**Upozornenie:** Tento článok a tento nástroj slúžia výhradne na technickú diskusiu a zdieľanie poznatkov. Akékoľvek nelegálne použitie je prísne zakázané.
 
-DetectDee: Hunt down social media accounts by username, email or phone across social networks
+---
 
-Feat
-Includes sites frequently used by CyberSecurity practitioners
-Hunt down social media accounts by username, email or phone
-Precise thread control and custom request headers are used to prevent WAF recognition
-Extensible, simple, and easy-to-use template
-Integration of mobile versions of social networking sites
-Install
+## DetectDee: Vyhľadávanie účtov na sociálnych sieťach podľa používateľského mena, e-mailu alebo telefónneho čísla
 
-cd DetectDee
-go mod tidy
-go run .
-Usage
-English
+**DetectDee** je nástroj, ktorý umožňuje vyhľadávať účty na rôznych sociálnych sieťach na základe používateľského mena, e-mailovej adresy alebo telefónneho čísla. Je obľúbený najmä medzi odborníkmi na kybernetickú bezpečnosť, ktorí ho využívajú na analýzu digitálnej stopy, OSINT (Open Source Intelligence) alebo pri vyšetrovaní.
 
-中文文档
+### Hlavné funkcie DetectDee
+
+- **Podpora viacerých platforiem:** Nástroj prehľadáva množstvo populárnych sociálnych sietí a platforiem, ktoré často využívajú aj bezpečnostní analytici.
+- **Vyhľadávanie podľa viacerých údajov:** Môžete zadať používateľské meno, e-mail alebo telefónne číslo a nástroj sa pokúsi nájsť zodpovedajúce účty.
+- **Presná kontrola požiadaviek:** DetectDee umožňuje detailné nastavenie požiadaviek (napr. vlastné HTTP hlavičky), čím sa minimalizuje riziko detekcie zo strany ochranných mechanizmov (WAF – Web Application Firewall).
+- **Jednoduché rozšírenie a úprava:** Šablóny sú jednoduché na úpravu, takže si môžete pridať vlastné platformy alebo upraviť existujúce podľa potreby.
+- **Podpora mobilných verzií stránok:** Nástroj dokáže pracovať aj s mobilnými verziami sociálnych sietí, čo zvyšuje šancu na úspešné vyhľadanie účtov.
+- **Jednoduchá inštalácia a použitie:** Stačí stiahnuť repozitár, nainštalovať závislosti a spustiť nástroj.
+
+### Inštalácia
+
+1. Stiahnite si repozitár DetectDee (napr. cez GitHub).
+2. Otvorte terminál a prejdite do priečinka s nástrojom:
+   ```
+   cd DetectDee
+   ```
+3. Nainštalujte potrebné závislosti:
+   ```
+   go mod tidy
+   ```
+4. Spustite nástroj:
+   ```
+   go run .
+   ```
+
+### Použitie
+
+- Po spustení zadáte požadované údaje (používateľské meno, e-mail alebo telefón).
+- Nástroj automaticky prehľadá podporované sociálne siete a zobrazí, kde sa daný údaj vyskytuje.
+- Výsledky môžete využiť na technickú analýzu, testovanie bezpečnosti alebo OSINT účely.
+
+---
+
+**Poznámka:**  
+DetectDee je určený výhradne na legálne a etické použitie, napríklad pri testovaní vlastných účtov, analýze bezpečnosti alebo v rámci výskumu. Akékoľvek zneužitie na nelegálne účely je zakázané a môže byť trestné.
+
+---
+
+Ak chceš podrobnejší návod alebo ukážku použitia, daj vedieť!
+
 
 Detect
 Hunt down social media accounts by username, email or phone across social networks
