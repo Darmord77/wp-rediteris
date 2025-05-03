@@ -65,7 +65,7 @@ To search for email:
 ./DetectDee detect -e mail@gmail.com,test@163.com
 To search for phone:
 
-./DetectDee detect -p 15822575984,13188524682
+./DetectDee detect -p 
 Show google search(please check yourself):
 
 ./DetectDee detect -n piaolin,blue -g
