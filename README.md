@@ -215,16 +215,15 @@ yystv
  Seebug-paper
  tttang
  TryHackMe
- aqniu
-cstis
+<a href="https://www.youtube.com/c/TheHackersWorld" rel="nofollow">TheHackerWorld</a>cstis
 qsnctf
  techcrunch
 Programmer
  OpenSource
  infoQ
  twle
- Quizlet
- Gitee
+<a href="https://quizlet.com/" rel="nofollow">Quizlet</a>
+Gitee
  Leetcode
  
  qyer
@@ -273,7 +272,7 @@ Programmer
  mastodon-technology
  social-tchncs
  finanzfrage
- slack
+ <a href="https://slack.com/">slack</a>
  smugmug
  traktrain
  wykop
