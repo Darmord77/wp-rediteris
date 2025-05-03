@@ -51,92 +51,128 @@ DetectDee je určený výhradne na legálne a etické použitie, napríklad pri 
 Ak chceš podrobnejší návod alebo ukážku použitia, daj vedieť!
 
 
-Detect
-Hunt down social media accounts by username, email or phone across social networks
+Samozrejme, tu je prepracovaný a rozšírený slovenský preklad s dlhšími vetami a vysvetleniami:
 
-Usage:
-  DetectDee detect 
+---
 
-Flags:
-  -c, --check           self-check
-  -e, --email strings   
-  -f, --file string     Site data file (default "data.json")
-  -g, --google          Show google search result
-  -h, --help            help for detect
-  -n, --name strings    name[s], e.g. piaolin,poq79,SomeOneYouLike
-      --nsfw            Include checking of NSFW sites from default list.
-  -o, --output string   Result file (default "result.txt")
-  -p, --phone strings   phone[s], e.g. 15725753684,13575558962
-      --precisely       Check precisely
-      --proxy string    Make requests over a proxy. e.g. so5://127.0.0.1:1080
-  -r, --retry int       Retry times after request failed (default 3)
-  -s, --site strings    Limit analysis to just the listed sites. Add multiple options to specify more than one site.
-  -t, --timeout int     Time (in seconds) to wait for response to requests (default 10)
-      --token string    chatgpt api token
+### DetectDee – Vyhľadávanie účtov na sociálnych sieťach podľa používateľského mena, e-mailu alebo telefónneho čísla
 
-Global Flags:
-  -v, --verbose   verbose output
+Nástroj **DetectDee** slúži na vyhľadávanie účtov na rôznych sociálnych sieťach na základe zadaného používateľského mena, e-mailovej adresy alebo telefónneho čísla. Tento nástroj je veľmi užitočný najmä pre odborníkov na kybernetickú bezpečnosť, analytikov, ale aj pre bežných používateľov, ktorí chcú zistiť, kde všade sa ich údaje môžu nachádzať na internete.
 
-Please update the data for the first time
+#### Základné použitie príkazu Detect
 
+Na spustenie vyhľadávania účtov podľa zadaných údajov použite príkaz:
+
+```
+DetectDee detect
+```
+
+Pri tomto príkaze môžete využiť viacero voliteľných parametrov (tzv. „flags“), ktoré vám umožnia prispôsobiť vyhľadávanie podľa vašich potrieb:
+
+- **-c, --check** – vykoná samokontrolu nástroja, aby ste sa uistili, že všetko funguje správne.
+- **-e, --email** – umožňuje zadať jeden alebo viac e-mailov, podľa ktorých sa budú účty vyhľadávať.
+- **-f, --file** – určíte súbor s údajmi o stránkach, ktoré sa majú prehľadávať (predvolený je „data.json“).
+- **-g, --google** – zobrazí výsledky vyhľadávania aj z Google, čo môže rozšíriť vaše možnosti analýzy.
+- **-h, --help** – zobrazí nápovedu k príkazu detect.
+- **-n, --name** – zadáte jedno alebo viac používateľských mien, napríklad: `-n janko,ferko,niekto`.
+- **--nsfw** – zahrnie do vyhľadávania aj stránky s obsahom pre dospelých (NSFW) z predvoleného zoznamu.
+- **-o, --output** – určíte názov súboru, do ktorého sa uložia výsledky (predvolený je „result.txt“).
+- **-p, --phone** – zadáte jedno alebo viac telefónnych čísel, napríklad: `-p 0905123456,0911123456`.
+- **--precisely** – aktivuje presné vyhľadávanie, ktoré je dôkladnejšie, ale môže trvať dlhšie.
+- **--proxy** – umožňuje vykonávať požiadavky cez proxy server, napríklad: `--proxy socks5://127.0.0.1:1080`.
+- **-r, --retry** – nastavíte, koľkokrát sa má požiadavka zopakovať v prípade neúspechu (predvolené sú 3 pokusy).
+- **-s, --site** – obmedzíte vyhľadávanie len na konkrétne stránky, ktoré zadáte (môžete zadať viac stránok naraz).
+- **-t, --timeout** – určíte čas v sekundách, ako dlho sa má čakať na odpoveď od stránok (predvolené je 10 sekúnd).
+- **--token** – zadáte ChatGPT API token, ak chcete využiť automatické označovanie výsledkov pomocou umelej inteligencie.
+
+Globálne parametre:
+- **-v, --verbose** – zapne podrobnejší výstup, vďaka čomu uvidíte viac informácií o priebehu vyhľadávania.
+
+#### Prvé spustenie a aktualizácia údajov
+
+Pri prvom použití nástroja je potrebné aktualizovať databázu stránok, ktoré sa budú prehľadávať. Urobíte to príkazom:
+
+```
 ./DetectDee update
-To search for only one user:
+```
 
-./DetectDee detect -n piaolin
-To search for more than one user:
+#### Príklady použitia
 
-./DetectDee detect -n piaolin,blue
-To search for more than one user and use ChatGPT for user tagging of results(need ChatGPT token):
+- Ak chcete vyhľadať účty len pre jedného používateľa, použite:
+  ```
+  ./DetectDee detect -n janko
+  ```
+- Ak chcete vyhľadať účty pre viacerých používateľov naraz, použite:
+  ```
+  ./DetectDee detect -n janko,ferko
+  ```
+- Ak chcete využiť ChatGPT na automatické označovanie výsledkov (potrebujete token):
+  ```
+  ./DetectDee detect -n janko,ferko --token {váš_ChatGPT_token}
+  ```
+- Ak chcete vyhľadávať podľa e-mailu:
+  ```
+  ./DetectDee detect -e niekto@email.com
+  ```
+- Ak chcete vyhľadávať podľa telefónneho čísla:
+  ```
+  ./DetectDee detect -p 0905123456
+  ```
+- Ak chcete zobraziť výsledky aj z Google:
+  ```
+  ./DetectDee detect -n janko,ferko -g
+  ```
+- Ak chcete obmedziť vyhľadávanie len na konkrétne stránky (napr. github a v2ex):
+  ```
+  ./DetectDee detect -n janko -s github,v2ex
+  ```
 
-./DetectDee detect -n piaolin,blue --token {ChatGPT Token}
-To search for email: . x
+#### Funkcia Screenshot
 
-./DetectDee detect.. 
-To search for phone: ..xxx
+DetectDee umožňuje aj vytváranie snímok obrazovky (screenshotov) výsledkov vyhľadávania. Táto funkcia je užitočná, ak potrebujete zdokumentovať nájdené účty alebo uložiť vizuálny dôkaz.
 
-./DetectDee detect -p 
-Show google search(please check yourself):
+**Na použitie tejto funkcie potrebujete:**
+- Nainštalovaný prehliadač Chrome
+- Dostatočný čas na spracovanie
+- Trochu voľnej pamäte
 
-./DetectDee detect -n piaolin,blue -g
-To search in specified site:
+Príkaz na vytvorenie screenshotov:
+```
+DetectDee screenshot [parametre]
+```
 
-./DetectDee detect -n piaolin -s github,v2ex
-Screenshot
-The screenshot function is used to screenshot the results of detect. Note that this function requires:
+Dôležité parametre pre screenshot:
+- **--chrome** – zobrazí Chrome počas vytvárania screenshotov
+- **-d, --dir** – určíte priečinok, kam sa screenshoty uložia (predvolený je „screenshots“)
+- **-f, --file** – určíte súbor s URL adresami, ktoré sa majú screenshotovať (predvolený je „result.txt“)
+- **--path** – zadáte cestu k spustiteľnému súboru Chrome
+- **--proxy** – použijete proxy server na vytváranie screenshotov
+- **-t, --thread** – nastavíte počet paralelných inštancií Chrome (predvolené sú 3)
+- **--timeout** – nastavíte časový limit na vytvorenie screenshotu (predvolené je 60 sekúnd)
 
-Chrome
-A period of time
-A bit of memory usage
-Usage:                                                                         
-  DetectDee screenshot [flags]                                                 
-                                                                               
-Flags:                                                                         
-      --chrome         Show chrome                                             
-  -d, --dir string     Folder path of the screenshot (default "screenshots")   
-  -f, --file string    Url list file (default "result.txt")                    
-  -h, --help           help for screenshot                                     
-      --path string    Chrome ExecPath                                         
-      --proxy string   Make requests over a proxy. e.g. socks5://127.0.0.1:1080
-  -t, --thread int     Chrome number (default 3)                               
-      --timeout int    Timeout (default 60)                                    
-                                                                               
-Global Flags:                                                                  
-  -v, --verbose   verbose output
-Screenshot the results of detect
+Príklad použitia:
+```
+./DetectDee screenshot result.jpg screen.jpg
+```
 
-./DetectDee screenshot
-result.jpg screen.jpg
+#### Prispievanie do projektu
 
-Contributing
-We would love to have you help us with the development of DetectDee. Each and every contribution is greatly valued!
+Vývojári DetectDee vítajú každú pomoc a príspevky od komunity. Ak máte záujem pomôcť, môžete napríklad:
+- Pridať podporu pre nové stránky (stačí napísať JSON alebo upozorniť vývojára na dostupné rozhranie)
+- Pomôcť s opravou stránok, ktoré boli v minulosti odstránené kvôli falošným pozitívam
+- Pracovať na nových funkciách, ako je credential stuffing alebo podpora ďalších bezpečnostných portálov
 
-Here are some things we would appreciate your help on:
+#### Podporované stránky
 
-Addition of new site support, You can notify me that a site has an interface available, or you can write JSON directly
-Bringing back site support of sites that have been removed in the past due to false positives
-Todo
-Credential Stuffing for result
-More site
+DetectDee podporuje množstvo stránok a platforiem, ktoré sú často využívané v oblasti kybernetickej bezpečnosti, ako napríklad: Freebuf, HackerOne, BugCrowd, VirusTotal, ThreatPost, TryHackMe, Leetcode, Gitee, Quizlet, InfoQ, TechCrunch a mnohé ďalšie.
+
+---
+
+**Záver:**  
+DetectDee je výkonný a flexibilný nástroj, ktorý vám umožní efektívne vyhľadávať digitálnu stopu na internete podľa rôznych údajov. Je vhodný pre profesionálov aj bežných používateľov, ktorí chcú mať prehľad o svojej online prítomnosti alebo analyzovať digitálnu stopu iných osôb. Vždy však dbajte na etické a legálne použitie tohto nástroja!
+
+STRÁNKY:::
+
 Secret
 Supported site
 CyberSecurity
