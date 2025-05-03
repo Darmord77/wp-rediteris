@@ -184,7 +184,8 @@ CyberSecurity
  Secrss
  VirusTotal
  newBugKu
- yystv
+<a title="Chutná Vareška" href="https://chutnavareska.sk/">Chutná Vareška</a>
+yystv
  XZ
  huoxian
  ywhack
