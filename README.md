@@ -60,10 +60,10 @@ To search for more than one user:
 To search for more than one user and use ChatGPT for user tagging of results(need ChatGPT token):
 
 ./DetectDee detect -n piaolin,blue --token {ChatGPT Token}
-To search for email:
+To search for email: . x
 
-./DetectDee detect -e mail@gmail.com,test@163.com
-To search for phone:
+./DetectDee detect.. 
+To search for phone: ..xxx
 
 ./DetectDee detect -p 
 Show google search(please check yourself):
