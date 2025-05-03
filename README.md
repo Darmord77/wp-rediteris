@@ -4,7 +4,7 @@ Snažíme sa zaprocovať na novom plugine pre Slovensku Wordpress komunity
 
 *Disclaimer: This article and this tool are for technical discussion and sharing only. Illegal use is strictly prohibited.
 
-DetectDee: Hunt down social media accounts by username, email or phone across social networks example.gif screen.jpg
+DetectDee: Hunt down social media accounts by username, email or phone across social networks
 
 Feat
 Includes sites frequently used by CyberSecurity practitioners
@@ -26,11 +26,11 @@ Detect
 Hunt down social media accounts by username, email or phone across social networks
 
 Usage:
-  DetectDee detect [flags]
+  DetectDee detect 
 
 Flags:
   -c, --check           self-check
-  -e, --email strings   email[s], e.g. mail@gmail.com,45715485@qq.com
+  -e, --email strings   
   -f, --file string     Site data file (default "data.json")
   -g, --google          Show google search result
   -h, --help            help for detect
@@ -39,7 +39,7 @@ Flags:
   -o, --output string   Result file (default "result.txt")
   -p, --phone strings   phone[s], e.g. 15725753684,13575558962
       --precisely       Check precisely
-      --proxy string    Make requests over a proxy. e.g. socks5://127.0.0.1:1080
+      --proxy string    Make requests over a proxy. e.g. so5://127.0.0.1:1080
   -r, --retry int       Retry times after request failed (default 3)
   -s, --site strings    Limit analysis to just the listed sites. Add multiple options to specify more than one site.
   -t, --timeout int     Time (in seconds) to wait for response to requests (default 10)
